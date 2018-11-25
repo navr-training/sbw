@@ -1,0 +1,22 @@
+runtime: php72
+
+
+handlers:
+- url: /
+  script: auto
+
+- url: /index\.html
+  script: auto
+
+- url: /assets/styles
+  static_dir: assets/styles
+  
+- url: /assets/scripts
+  static_dir: assets/styles
+
+- url: /(.*\.(gif|png|jpg))$
+  static_files: static/\1
+  upload: static/.*\.(gif|png|jpg)$
+
+- url: .*
+  script: auto
